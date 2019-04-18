@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: activity-2b
+  labels:
+    name: activity-2b
+spec:
+  containers:
+  - name: activity-2b
+    image: ddhhz/nyancat-server
+    ports:
+    - containerPort: 23
+      hostPort: 2001
+    resources:
+      requests:
+         cpu: "100m"
+         memory: "16G"
