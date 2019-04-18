@@ -1,19 +1,18 @@
-version: '3.4'
+version: '2.3'
 services:
   server:
-    image: rancher/k3s:v0.2.0
-    command: server --disable-agent
+    image: rancher/k3s:v0.4.0-rc3
+    command: server --disable-agent --kubelet-arg="address=0.0.0.0"
     environment:
     - K3S_CLUSTER_SECRET=somethingtotallyrandom
     - K3S_KUBECONFIG_OUTPUT=/output/kubeconfig.yaml
     - K3S_KUBECONFIG_MODE=666
     volumes:
-    - type: bind
-      source: k3s-config
-      target: /output
-
+    - k3s-config:/output
+    cpu_count: 1
+    mem_limit: 500m
   node:
-    image: rancher/k3s:v0.2.0
+    image: rancher/k3s:v0.4.0-rc3
     tmpfs:
     - /run
     - /var/run
@@ -23,14 +22,12 @@ services:
     - K3S_CLUSTER_SECRET=somethingtotallyrandom
     # Can also use K3S_TOKEN from /var/lib/rancher/k3s/server/node-token instead of K3S_CLUSTER_SECRET
     #- K3S_TOKEN=K13849a67fc385fd3c0fa6133a8649d9e717b0258b3b09c87ffc33dae362c12d8c0::node:2e373dca319a0525745fd8b3d8120d9c
-
-
+    cpu_count: 1
+    mem_limit: 500m
   usersandbox:
     image: darshandkd/usersandbox:latest
     volumes:
-    - type: bind
-      source: k3s-config
-      target: /tmp/
+    - k3s-config:/tmp/
     ports:
     - "5000:22"
 
