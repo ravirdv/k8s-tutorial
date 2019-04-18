@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: activity-3
+  labels:
+    name: activity-3
+spec:
+  containers:
+  - name: activity-3
+    env:
+    - name: CONTENT
+      value: "Hello from the environment"
+    image: ravirdv/http-responder
