@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: activity-2
+  name: activity-2a
   labels:
-    name: activity-2
+    name: activity-2a
 spec:
   containers:
-  - name: activity-2
+  - name: activity-2a
     image: ddhhz/nyancat-server
     ports:
     - containerPort: 23
