@@ -1,0 +1,15 @@
+kind: DaemonSet
+metadata:
+  name: activity-1a
+spec:
+  template:
+    metadata:
+      labels:
+        app: activity-1a
+    spec:
+      containers:
+        - name: activity-1a
+          image: nginx:1.155-alpine
+          ports:
+            - containerPort: 80
+              hostPort: 8001
