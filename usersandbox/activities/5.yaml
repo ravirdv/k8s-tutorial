@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: activity-5
+  labels:
+    name: activity-5
+spec:
+  containers:
+  - name: activity-5
+    env:
+    - name: CONTENT
+      value: "safe to ignore this"
+    image: ravirdv/http-responder
+    ports:
+       - containerPort: 8080
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: my-service
+spec:
+  selector:
+    app: actvity-5
+  type: NodePort
+
+  ports:
+  - port: 8080

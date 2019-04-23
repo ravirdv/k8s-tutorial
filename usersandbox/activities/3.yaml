@@ -8,6 +8,6 @@ spec:
   containers:
   - name: activity-3
     env:
-    - name: CONTENT
+    - name: CONTENTS
       value: "Hello from the environment"
     image: ravirdv/http-responder

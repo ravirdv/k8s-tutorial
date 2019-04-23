@@ -13,4 +13,4 @@ spec:
       hostPort: 2000
     resources:
       requests:
-         cpu: "2000m"
+         cpu: "6"
