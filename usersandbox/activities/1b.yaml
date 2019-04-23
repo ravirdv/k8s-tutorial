@@ -1,14 +1,14 @@
 kind: DaemonSet
 metadata:
-  name: activity-1a
+  name: activity-1b
 spec:
   template:
     metadata:
       labels:
-        app: activity-1a
+        app: activity-1b
     spec:
       containers:
-        - name: activity-1a
+        - name: activity-1b
           image: nginx:1.155-alpine
           ports:
             - containerPort: 80
