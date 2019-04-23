@@ -1,15 +1,15 @@
 apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
-  name: activity-1
+  name: activity-1a
 spec:
   template:
     metadata:
       labels:
-        app: activity-1
+        app: activity-1a
     spec:
       containers:
-        - name: activity-1
+        - name: activity-1a
           image: nginx
           ports:
             - containerPort: 80
