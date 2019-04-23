@@ -1,10 +1,9 @@
-#apiVersion: v1
-#kind: Secret
-#metadata:
-#  name: api-token
-#type: Opaque
-#data:
-#  AUTH_TOKEN_VALUE: this_is_nuclear_launch_code
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  version: "1.0"
 ---
 apiVersion: v1
 kind: Pod
@@ -18,7 +17,8 @@ spec:
     env:
     - name: CONTENT
       valueFrom:
-        secretKeyRef:
-          name: my-secret
-          key: AUTH_TOKEN_VALUE
+        configMapKeyRef:
+          name: app-config
+          key: version
     image: ravirdv/http-responder
+    
