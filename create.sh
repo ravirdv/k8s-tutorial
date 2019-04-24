@@ -1,4 +1,4 @@
-for i in {1..$1}
+for i in {1..15}
 do
 mkdir /tmp/user-$i
 cp docker-compose.yml /tmp/user-$i/
