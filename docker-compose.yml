@@ -1,7 +1,7 @@
 version: '2.3'
 services:
   server:
-    image: rancher/k3s:v0.4.0-rc3
+    image: rancher/k3s:v0.4.0
     command: server --disable-agent --kubelet-arg="address=0.0.0.0"
     environment:
     - K3S_CLUSTER_SECRET=somethingtotallyrandom
