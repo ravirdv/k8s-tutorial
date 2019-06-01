@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: app-config
+  name: app-config # this will create a configMap resource with name "app-config"
 data:
   version: "1.0"
----
+--- # we can use three dashses to combine multiple resource definition in single yaml file.
 apiVersion: v1
 kind: Pod
 metadata:
@@ -18,7 +18,9 @@ spec:
     - name: CONTENT
       valueFrom:
         configMapKeyRef:
-          name: app-configs
+          name: app-configs # lets use value from configmap created in above portion of the file.
           key: version
     image: ravirdv/http-responder
-    
+    ports:
+    - containerPort: 5000
+      hostPort: 4000

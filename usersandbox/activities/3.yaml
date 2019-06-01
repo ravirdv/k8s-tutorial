@@ -8,6 +8,9 @@ spec:
   containers:
   - name: activity-3
     env:
-    - name: CONTENTS
+    - name: CONTENTS #Note: This app needs “CONTENT” environment variable to run
       value: "Hello from the environment"
-    image: ravirdv/http-responder
+    image: ravirdv/http-responder # this image starts a http responder listening on container port 5000
+    ports:
+    - containerPort: 5000
+      hostPort: 3000

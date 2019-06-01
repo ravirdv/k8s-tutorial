@@ -9,16 +9,16 @@ spec:
         app: activity-5
     spec:
       containers:
-       - name: activity-5
-         image: jetbrainsinfra/nginx-tcp-proxy
-         env:
-           - name: LISTEN_PORT
-             value: "9000"
-           - name: BACKEND_HOST
-             value: "towel.blinkenlights.nl"
-           - name: BACKEND_PORT
-             value: "23"
-         ports:
-           - containerPort: 9000
-             hostPort: 8000
+        - name: activity-5
+        image: jetbrainsinfra/nginx-tcp-proxy
+        env:
+          - name: LISTEN_PORT
+            value: "9000"
+          - name: BACKEND_HOST
+            value: "towel.blinkenlights.nl"
+          - name: BACKEND_PORT
+            value: "23"
+        ports:
+          - containerPort: 9000
+            hostPort: 8000
 
