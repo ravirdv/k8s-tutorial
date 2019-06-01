@@ -12,5 +12,5 @@ spec:
       value: "Hello from the environment"
     image: ravirdv/http-responder # this image starts a http responder listening on container port 5000
     ports:
-    - containerPort: 5000
+    - containerPort: 8080
       hostPort: 3000

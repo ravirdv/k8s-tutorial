@@ -4,7 +4,8 @@ metadata:
   name: app-config # this will create a configMap resource with name "app-config"
 data:
   version: "1.0"
---- # we can use three dashses to combine multiple resource definition in single yaml file.
+--- 
+# we can use three dashses to combine multiple resource definition in single yaml file.
 apiVersion: v1
 kind: Pod
 metadata:
@@ -22,5 +23,5 @@ spec:
           key: version
     image: ravirdv/http-responder
     ports:
-    - containerPort: 5000
+    - containerPort: 8080
       hostPort: 4000
